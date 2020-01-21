@@ -76,6 +76,17 @@ namespace LinQ
             foreach (string name in names) Console.Write(name + " ");
             Console.WriteLine();
             foreach (int length in query) Console.Write(length + "|");
+
+            Console.WriteLine();
+            IEnumerable<string> sortedByLength, sortedAlphabetically;
+            sortedByLength = names.OrderBy(n => n.Length); // int key
+            sortedAlphabetically = names.OrderBy(n => n);  // string key
+
+            Console.WriteLine("Sortiert nach Länge:");
+            foreach (string name in sortedByLength) Console.Write(name + " ");
+            Console.WriteLine();
+            Console.WriteLine("Sortiert nach dem Alphabet:");
+            foreach (string name in sortedAlphabetically) Console.Write(name + " ");
         }
     }
 }
